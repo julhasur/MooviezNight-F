@@ -1,22 +1,32 @@
-import React from 'react';
-import Header from './Components/header/Header.jsx';
-import SearchBar from './Components/SearchBar.jsx';
+import React, { useState } from 'react';
+import Header from "./Components/header/Header";
+import SearchBar from './Components/SearchBar';
+import MovieCard from './Components/MovieCard';
 
 function App() {
-  const handleSearch = (query) => {
-    console.log('Searching for:', query);
+  const [movie, setMovie] = useState(null);
+  const handleSearch = async (query) => {
+    const response = await fetch(`https://www.omdbapi.com/?t=${query}&apikey=E61b5b49`);
+    const data = await response.json();
+    if (data.Response === 'True') {
+      setMovie(data);
+    } else {
+      alert('Movie not found!');
+    }
  
   };
 
-  const handleRandom = () => {
-    console.log('Fetching a random movie...');
-  
+  const handleRandom = async () => {
+    const randomTitles = ['Inception', 'Titanic', 'Avatar', 'The Matrix', 'Interstellar'];
+    const randomTitle = randomTitles[Math.floor(Math.random() * randomTitles.length)];
+    handleSearch(randomTitle);
   };
 
   return (
     <div>
      <Header/>
      <SearchBar onSearch={handleSearch} onRandom={handleRandom} />
+      <MovieCard movie={movie} />
     </div>
   );
 }
