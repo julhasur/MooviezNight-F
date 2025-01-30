@@ -1,40 +1,207 @@
+/* Favorites List Container */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #0f0202e0; /* Darker shade for contrast */
+}
+.favorites-container {
+  padding: 20px;
+  background-color: #141414; /* Netflix dark background */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-h1, h2, h3 {
-  color: #0e0101;
+.favorites-title {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
-button {
+/* Empty State */
+.favorites-empty {
+  text-align: center;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 1.2rem;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* Movie Card */
+.favorites-movie {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.favorites-movie:hover {
+  transform: scale(1.02);
+}
+
+.favorites-poster {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-right: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.favorites-info {
+  flex: 1;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+.favorites-movie-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Remove Button */
+.favorites-remove-button {
+  background-color: transparent;
+  border: 2px solid #e50914; /* Netflix red */
+  color: #e50914;
+  padding: 5px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.favorites-remove-button:hover {
+  background-color: #e50914;
+  color: #fff;
+}
+
+/* Header Container */
+.app-header {
+  background-color: #141414; /* Netflix dark background */
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #e50914; /* Netflix red accent */
+}
+
+/* Title Styling */
+.app-title {
+  color: #e50914;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Tagline Styling */
+.app-tagline {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-style: italic;
+  opacity: 0.8;
+}
+/* Placeholder */
+.movie-placeholder {
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+}
+
+/* Movie Card */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #141414;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Poster */
+.movie-poster {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Details */
+.movie-details {
+  padding: 10px 15px;
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Save Button */
+.save-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #555;
+.save-button:hover {
+  background-color: #f40612;
 }
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-header {
-  background-color: #f02626;
-  color: white;
-  padding: 10px 20px;
+.search-container {
   text-align: center;
+  margin: 20px 0;
+  background-color: #1c1c1c;
 }
 
-footer {
-  text-align: center;
+.search-input {
   padding: 10px;
-  margin-top: 20px;
-  background-color: #ddd;
+  width: 250px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-button,
+.random-button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button {
+  background-color: #e50914; /* Netflix red */
+  color: white;
+}
+
+.random-button {
+  background-color: #6d1a1a; /* Darker shade for contrast */
+  color: white;
+}
+
+.search-button:hover,
+.random-button:hover {
+  opacity: 0.8;
 }
