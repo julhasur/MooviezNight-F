@@ -3,6 +3,7 @@ import Header from "./Components/header/Header";
 import SearchBar from './Components/SearchBar';
 import MovieCard from './Components/MovieCard';
 import FavoritesList from './Components/FavoritesList';
+import TrendingMovies from './Components/TrendingMovies';
 
 function App() {
   const [movie, setMovie] = useState(null);
@@ -52,6 +53,7 @@ function App() {
      <Header/>
      <SearchBar onSearch={handleSearch} onRandom={handleRandom} />
       <MovieCard movie={movie} onSave={handleSave}  />
+      <TrendingMovies/>
       <FavoritesList favorites={favorites} onRemove={handleRemove} />
     </div>
   );
